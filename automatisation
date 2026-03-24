@@ -1,0 +1,15 @@
+import requests
+
+url = input("Entrez l'URL du site : ")
+
+try:
+    response = requests.get(url)
+    print("Statut :", response.status_code)
+
+    if response.status_code == 200:
+        print("Site actif ✔")
+    else:
+        print("Problème détecté ⚠")
+
+except:
+    print("Erreur de connexion ❌")
